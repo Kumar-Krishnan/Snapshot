@@ -236,7 +236,15 @@ second_dostoevsky_test.answers.create(
     answer_maximum: 3,
 )
 
+beck_depression_inventory = Test.new
+beck_depression_inventory.name = "Beck Depression Inventory"
+beck_depression_inventory.template = true,
+beck_depression_inventory.save
 
+beck_depressions_inventory.questions.create(
+    test_type: "Beck Depression Inventory",
+    question_text: ""
+)
 
 
 # franklin = User.new

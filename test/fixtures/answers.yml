@@ -2,12 +2,12 @@
 
 one:
   test_type: MyString
-  answer_submitted: 1
-  answer_maximum: 1
-  test: one
+  answer_value: 1
+  answer_chosen: false
+  question: one
 
 two:
   test_type: MyString
-  answer_submitted: 1
-  answer_maximum: 1
-  test: two
+  answer_value: 1
+  answer_chosen: false
+  question: two

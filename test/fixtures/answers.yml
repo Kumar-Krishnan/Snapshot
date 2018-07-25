@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_type: MyString
+  answer_submitted: 1
+  answer_maximum: 1
+  test: one
+
+two:
+  test_type: MyString
+  answer_submitted: 1
+  answer_maximum: 1
+  test: two

@@ -59,6 +59,57 @@ young_dostoevsky.social_interaction_anxieties.create(
 )
 
 
+mature_dostoevsky = Snap.new
+mature_dostoevsky.user_id = dostoevsky.id
+mature_dostoevsky.save
+mature_dostoevsky.beck_depressions.create(
+    answer1: 1,
+    answer2: 1,
+    answer3: 1,
+    answer4: 1,
+    answer5: 1,
+    answer6: 1,
+    answer7: 1,
+    answer8: 1,
+    answer9: 1,
+    answer10: 1,
+    answer11: 1,
+    answer12: 1,
+    answer13: 1,
+    answer14: 1,
+    answer15: 1,
+    answer16: 1,
+    answer17: 1,
+    answer18: 1,   
+    answer19: 1,
+    answer20: 1,
+    answer21: 1,
+    score: 21
+)
+mature_dostoevsky.social_interaction_anxieties.create(
+    answer1: 1,
+    answer2: 1,
+    answer3: 1,
+    answer4: 1,
+    answer5: 1,
+    answer6: 1,
+    answer7: 1,
+    answer8: 1,
+    answer9: 1,
+    answer10: 1,
+    answer12: 1,
+    answer11: 1,
+    answer13: 1,
+    answer14: 1,
+    answer15: 1,
+    answer16: 1,
+    answer17: 1,
+    answer18: 1,
+    answer19: 1,
+    answer20: 1,
+    score: 20
+)
+
 franklin = User.new
 franklin.name = "Benjamin franklin"
 franklin.age = 35
@@ -114,4 +165,55 @@ young_franklin.social_interaction_anxieties.create(
     answer19: 0,
     answer20: 0,
     score: 0
+)
+
+elder_franklin = Snap.new
+elder_franklin.user_id = franklin.id
+elder_franklin.save
+
+elder_franklin.beck_depressions.create(
+    answer1: 1,
+    answer2: 1,
+    answer3: 1,
+    answer4: 1,
+    answer5: 1,
+    answer6: 1,
+    answer7: 1,
+    answer8: 1,
+    answer9: 1,
+    answer10: 0,
+    answer11: 0,
+    answer12: 0,
+    answer13: 0,
+    answer14: 0,
+    answer15: 0,
+    answer16: 0,
+    answer17: 0,
+    answer18: 0,   
+    answer19: 0,
+    answer20: 0,
+    answer21: 0,
+    score: 9
+)
+elder_franklin.social_interaction_anxieties.create(
+    answer1: 1,
+    answer2: 1,
+    answer3: 1,
+    answer4: 1,
+    answer5: 1,
+    answer6: 1,
+    answer7: 1,
+    answer8: 1,
+    answer9: 1,
+    answer10: 0,
+    answer12: 0,
+    answer13: 0,
+    answer14: 0,
+    answer15: 0,
+    answer16: 0,
+    answer17: 0,
+    answer18: 0,
+    answer19: 0,
+    answer20: 0,
+    score: 9
 )

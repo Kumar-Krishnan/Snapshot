@@ -21,8 +21,8 @@ class Api::SnapsController < ApplicationController
     #     render json: @post
     # end
 
-    # def destroy
-    #     @post = Post.find(params[:id]).destroy
-    #     render status: :ok
-    # end
+    def destroy
+        @snap = Snap.find(params[:id]).destroy
+        render status: :ok
+    end
 end

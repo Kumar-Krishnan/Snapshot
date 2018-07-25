@@ -4,16 +4,16 @@ class Api::TestsController < ApplicationController
         render json: @tests
     end
 
-    # def show
-    #     @snap = Snap.find(params[:id])
-    #     render json: @snap
-    # end
+    def show
+        @test = Test.find(params[:id])
+        render json: @test
+    end
 
-    # def create
-    #     @user = User.find(params[:user_id])
-    #     @snap = @user.snaps.create()
-    #     render json: @post
-    # end
+    def create
+        @snap = Snap.find(params[:snap_id])
+        @test = @snap.tests.create(test_params)
+        render json: @test
+    end
 
     # def update
     #     @post = Post.find(params[:id])
@@ -25,4 +25,9 @@ class Api::TestsController < ApplicationController
     #     @snap = Snap.find(params[:id]).destroy
     #     render status: :ok
     # end
+
+    private
+    def test_params
+        params.require(:test).permit(:name, :template, :score, :measure)
+    end
 end

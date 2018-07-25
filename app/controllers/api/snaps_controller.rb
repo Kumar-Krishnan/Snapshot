@@ -12,7 +12,7 @@ class Api::SnapsController < ApplicationController
     def create
         @user = User.find(params[:user_id])
         @snap = @user.snaps.create()
-        render json: @post
+        render json: @snap
     end
 
     # def update

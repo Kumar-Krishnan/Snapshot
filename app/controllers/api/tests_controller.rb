@@ -21,10 +21,10 @@ class Api::TestsController < ApplicationController
     #     render json: @post
     # end
 
-    # def destroy
-    #     @snap = Snap.find(params[:id]).destroy
-    #     render status: :ok
-    # end
+    def destroy
+        @test = Test.find(params[:id]).destroy
+        render status: :ok
+    end
 
     private
     def test_params

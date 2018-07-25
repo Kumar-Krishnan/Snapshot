@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  snap: one
+  name: MyString
+  template: false
+  score: 1.5
 
 two:
-  snap: two
+  name: MyString
+  template: false
+  score: 1.5

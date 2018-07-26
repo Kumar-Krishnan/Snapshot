@@ -4,10 +4,10 @@ class Api::QuestionsController < ApplicationController
         render json: @questions
     end
 
-    # def show
-    #     @test = Test.find(params[:id])
-    #     render json: @test
-    # end
+    def show
+        @test = Test.find(params[:id])
+        render json: @test
+    end
 
     # def create
     #     @snap = Snap.find(params[:snap_id])

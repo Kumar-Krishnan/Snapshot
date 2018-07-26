@@ -6,7 +6,7 @@ class Api::TestsController < ApplicationController
 
     def show
         @test = Test.find(params[:id])
-        render json: @test
+        # render json: @test
     end
 
     def create
@@ -24,6 +24,25 @@ class Api::TestsController < ApplicationController
     def destroy
         @test = Test.find(params[:id]).destroy
         render status: :ok
+    end
+
+    def get_entire_test
+        @test = Test.find_by_name(params[:test_name])
+        @questions = @test.questions
+
+        # response = {
+        #     :test => @test,
+        #     :questions => @questions
+        # }
+
+        # json.array!@questions do |question|
+        #     json.questions question.answers do |answer|
+        #         json.value answer.answer_value
+        #         json.chosen answer.answer_chosen
+        #         json.text answer.answer_text
+        #     end
+        # end
+        # render json: response
     end
 
     private

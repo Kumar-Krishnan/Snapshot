@@ -1,2 +1,1 @@
 web: rails s
-git 

@@ -1,13 +1,18 @@
-json.(@test,:questions)
 
 
+# json.questions(@questions) do |question|
+#     json.(question, :id)
+#     json.answers question.answers do |answer|
+#         json.answer answer
+#     end
+# end
 
-
-json.array! @questions do |question|
+json.test2 do
+    json.test(@test)
+    json.questions(@questions) do |question|
         json.(question, :id)
         json.answers question.answers do |answer|
-            json.value answer.answer_value
-            json.chosen answer.answer_chosen
-            json.text answer.answer_text
+            json.answer answer
+        end
     end
 end

@@ -25,6 +25,7 @@ beck_depression_inventory.save
 beck_question1 = Question.new
 beck_question1.test_type = "Beck Depression Inventory"
 beck_question1.test_id = beck_depression_inventory.id
+beck_question1.question_text = "1"
 beck_question1.save
 
 beck_question1.answers.create(
@@ -55,6 +56,7 @@ beck_question1.answers.create(
 beck_question2 = Question.new
 beck_question2.test_type = "Beck Depression Inventory"
 beck_question2.test_id = beck_depression_inventory.id
+beck_question2.question_text = "2"
 beck_question2.save
 
 beck_question2.answers.create(
@@ -116,13 +118,13 @@ social_interaction_anxiety_question1.answers.create(
 )
 social_interaction_anxiety_question1.answers.create(
     test_type: "Social Interaction Anxiety",
-    answer_value: 0,
+    answer_value: 3,
     answer_chosen: false,
     answer_text: "Very"
 )
 social_interaction_anxiety_question1.answers.create(
     test_type: "Social Interaction Anxiety",
-    answer_value: 0,
+    answer_value: 4,
     answer_chosen: false,
     answer_text: "Extremely"
 )
@@ -153,13 +155,13 @@ social_interaction_anxiety_question2.answers.create(
 )
 social_interaction_anxiety_question2.answers.create(
     test_type: "Social Interaction Anxiety",
-    answer_value: 0,
+    answer_value: 3,
     answer_chosen: false,
     answer_text: "Very"
 )
 social_interaction_anxiety_question2.answers.create(
     test_type: "Social Interaction Anxiety",
-    answer_value: 0,
+    answer_value: 4,
     answer_chosen: false,
     answer_text: "Extremely"
 )
@@ -176,8 +178,145 @@ dost_first_snap.user_id = dostoevsky.id
 dost_first_snap.save
 
 dfs_first_beck_dep_test = beck_depression_inventory.dup
+dfs_first_beck_dep_test.name = "Beck Depression Inventory"
 dfs_first_beck_dep_test.snap_id = dost_first_snap.id
 dfs_first_beck_dep_test.save
+
+dfs_first_beck_dep_test_question1 = Question.new
+dfs_first_beck_dep_test_question1.test_type = "Beck Depression Inventory"
+dfs_first_beck_dep_test_question1.test_id = dfs_first_beck_dep_test.id
+dfs_first_beck_dep_test_question1.question_text = "1"
+dfs_first_beck_dep_test_question1.save
+
+dfs_first_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 0,
+    answer_chosen: false,
+    answer_text: "I do not feel sad.",
+)
+dfs_first_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 1,
+    answer_chosen: false,
+    answer_text: "I feel sad."
+)
+dfs_first_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 2,
+    answer_chosen: false,
+    answer_text: "I am sad all the time and I can't snap out of it."
+)
+dfs_first_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 3,
+    answer_chosen: true,
+    answer_text: "I am so sad and unhappy that I can't stand it. "
+)
+
+dfs_first_beck_dep_test_question2 = Question.new
+dfs_first_beck_dep_test_question2.test_type = "Beck Depression Inventory"
+dfs_first_beck_dep_test_question2.test_id = dfs_first_beck_dep_test.id
+dfs_first_beck_dep_test_question2.question_text = "2"
+dfs_first_beck_dep_test_question2.save
+
+dfs_first_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 0,
+    answer_chosen: false,
+    answer_text: "I do not feel sad.",
+)
+dfs_first_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 1,
+    answer_chosen: false,
+    answer_text: "I feel sad."
+)
+dfs_first_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 2,
+    answer_chosen: true,
+    answer_text: "I am sad all the time and I can't snap out of it."
+)
+dfs_first_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 3,
+    answer_chosen: false,
+    answer_text: "I am so sad and unhappy that I can't stand it. "
+)
+
+dost_second_snap = Snap.new
+dost_second_snap.user_id = dostoevsky.id
+dost_second_snap.save
+
+dfs_second_beck_dep_test = beck_depression_inventory.dup
+dfs_second_beck_dep_test.name = "Beck Depression Inventory"
+dfs_second_beck_dep_test.snap_id = dost_second_snap.id
+dfs_second_beck_dep_test.save
+
+dfs_second_beck_dep_test_question1 = Question.new
+dfs_second_beck_dep_test_question1.test_type = "Beck Depression Inventory"
+dfs_second_beck_dep_test_question1.test_id = dfs_second_beck_dep_test.id
+dfs_second_beck_dep_test_question1.question_text = "1"
+dfs_second_beck_dep_test_question1.save
+
+dfs_second_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 0,
+    answer_chosen: false,
+    answer_text: "I do not feel sad.",
+)
+dfs_second_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 1,
+    answer_chosen: false,
+    answer_text: "I feel sad."
+)
+dfs_second_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 2,
+    answer_chosen: false,
+    answer_text: "I am sad all the time and I can't snap out of it."
+)
+dfs_second_beck_dep_test_question1.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 3,
+    answer_chosen: true,
+    answer_text: "I am so sad and unhappy that I can't stand it. "
+)
+
+dfs_second_beck_dep_test_question2 = Question.new
+dfs_second_beck_dep_test_question2.test_type = "Beck Depression Inventory"
+dfs_second_beck_dep_test_question2.test_id = dfs_second_beck_dep_test.id
+dfs_second_beck_dep_test_question2.question_text = "2"
+dfs_second_beck_dep_test_question2.save
+
+dfs_second_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 0,
+    answer_chosen: false,
+    answer_text: "I do not feel sad.",
+)
+dfs_second_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 1,
+    answer_chosen: false,
+    answer_text: "I feel sad."
+)
+dfs_second_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 2,
+    answer_chosen: false,
+    answer_text: "I am sad all the time and I can't snap out of it."
+)
+dfs_second_beck_dep_test_question2.answers.create(
+    test_type: "Beck Depression Inventory",
+    answer_value: 3,
+    answer_chosen: true,
+    answer_text: "I am so sad and unhappy that I can't stand it. "
+)
+
+
+
 # dfs_first_beck_dep_test.name = "Social Interaction Anxiety"
 # dfs_first_beck_dep_test.template = false
 # dfs_first_beck_dep_test.measure = "Social Interaction Anxiety"

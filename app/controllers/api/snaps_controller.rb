@@ -15,6 +15,10 @@ class Api::SnapsController < ApplicationController
         render json: @snap
     end
 
+    def get_snaps_and_tests
+        @snaps = User.find(params[:user_id]).snaps
+        @snap = @snaps.first
+    end
     # def update
     #     @post = Post.find(params[:id])
     #     @post.update(post_params)

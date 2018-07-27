@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import SnapBuilder from '../snaps/SnapBuilder'
 
 class UserHomePage extends Component {
 
@@ -20,7 +21,7 @@ class UserHomePage extends Component {
     render() {
         return (
             <div>
-                
+                <SnapBuilder userId={this.props.match.params.id} snaps={this.state.snaps}/>
             </div>
         );
     }

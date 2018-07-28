@@ -24,8 +24,6 @@ class Snap extends Component {
 
                         )
                     })             
-                
-                
                 } */}
                 {snaps}
             </div>

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   
   namespace :api do
-    get '/entire_test/:test_name/',to:'tests#get_entire_test'
-    get '/users/:user_id/snaps/:snap_id/tests/all'
+    # get '/entire_test/:test_name/',to:'tests#get_entire_test'
+    get '/users/:user_id/snaps/:snap_id/tests/all', to:'tests#get_whole_tests', defaults: {format: :json}
     get '/users/:user_id/snaps/all', to: 'snaps#get_snaps_and_tests', defaults: {format: :json}
     resources :users do
       resources :snaps do

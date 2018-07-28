@@ -26,9 +26,8 @@ class Api::TestsController < ApplicationController
         render status: :ok
     end
 
-    def get_entire_test
-        @test = Test.find_by_name(params[:test_name])
-        @questions = @test.questions
+    def get_whole_tests
+        @tests = Snap.find(params[:snap_id]).tests
 
         # response = {
         #     :test => @test,

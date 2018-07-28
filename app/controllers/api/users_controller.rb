@@ -6,6 +6,17 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        # @users2 = User.includes(:snaps)
+        # @user3 = @users2.each do |user|
+        #     user.snaps.id
+        # end
+        # @user4 = Question.joins(:answers).merge(Answer.)
+        # snaps_with_this_user = Snap.includes(:snaps)
+        # tests = Test.all
+        # @user6 = tests.each do |test|
+        #     test.snap
+        # end
+        # @user7 = Answer.joins(:question).where(question_id)
         render json: @user
     end
 

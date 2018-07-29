@@ -6,14 +6,16 @@ Rails.application.routes.draw do
     # get '/entire_test/:test_name/',to:'tests#get_entire_test'
     get '/users/:user_id/snaps/:snap_id/tests/all', to:'tests#get_whole_tests', defaults: {format: :json}
     get '/users/:user_id/snaps/all', to: 'snaps#get_snaps_and_tests', defaults: {format: :json}
+    get '/snaps/:snap_id/test_scores/all', to: 'test_scores#get_all_test_scores_for_snap'
     resources :users do
-      resources :snaps do
-        resources :tests do
-          resources :questions do
-            resources :answers
-          end
-        end
-      end
+      resources :snaps
+      resources :test_scores
     end
+
+    resources :snaps do
+      resources :test_scores
+    end
+
+    resources :moods
   end
 end

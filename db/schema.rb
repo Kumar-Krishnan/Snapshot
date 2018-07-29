@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_28_215347) do
+ActiveRecord::Schema.define(version: 2018_07_29_211813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 2018_07_28_215347) do
     t.index ["user_id"], name: "index_snaps_on_user_id"
   end
 
+  create_table "test_scores", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "snap_id"
+    t.bigint "mood_id"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mood_id"], name: "index_test_scores_on_mood_id"
+    t.index ["snap_id"], name: "index_test_scores_on_snap_id"
+    t.index ["user_id"], name: "index_test_scores_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "age"
@@ -46,4 +58,7 @@ ActiveRecord::Schema.define(version: 2018_07_28_215347) do
   add_foreign_key "moods_snaps", "moods"
   add_foreign_key "moods_snaps", "snaps"
   add_foreign_key "snaps", "users"
+  add_foreign_key "test_scores", "moods"
+  add_foreign_key "test_scores", "snaps"
+  add_foreign_key "test_scores", "users"
 end

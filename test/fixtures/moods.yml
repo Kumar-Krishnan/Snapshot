@@ -2,12 +2,6 @@
 
 one:
   name: MyString
-  template: false
-  score: 1.5
-  snap: one
 
 two:
   name: MyString
-  template: false
-  score: 1.5
-  snap: two

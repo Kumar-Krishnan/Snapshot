@@ -10,29 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_25_175747) do
+ActiveRecord::Schema.define(version: 2018_07_28_215347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: :cascade do |t|
-    t.string "test_type"
-    t.integer "answer_value"
-    t.boolean "answer_chosen"
-    t.bigint "question_id"
+  create_table "moods", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "answer_text"
-    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "test_type"
-    t.string "question_text"
-    t.bigint "test_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_questions_on_test_id"
+  create_table "moods_snaps", id: false, force: :cascade do |t|
+    t.bigint "mood_id"
+    t.bigint "snap_id"
+    t.index ["mood_id"], name: "index_moods_snaps_on_mood_id"
+    t.index ["snap_id"], name: "index_moods_snaps_on_snap_id"
   end
 
   create_table "snaps", force: :cascade do |t|
@@ -40,17 +33,6 @@ ActiveRecord::Schema.define(version: 2018_07_25_175747) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_snaps_on_user_id"
-  end
-
-  create_table "tests", force: :cascade do |t|
-    t.string "name"
-    t.boolean "template"
-    t.float "score"
-    t.bigint "snap_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "measure"
-    t.index ["snap_id"], name: "index_tests_on_snap_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,8 +43,7 @@ ActiveRecord::Schema.define(version: 2018_07_25_175747) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "answers", "questions"
-  add_foreign_key "questions", "tests"
+  add_foreign_key "moods_snaps", "moods"
+  add_foreign_key "moods_snaps", "snaps"
   add_foreign_key "snaps", "users"
-  add_foreign_key "tests", "snaps"
 end

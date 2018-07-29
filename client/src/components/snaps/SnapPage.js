@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import TestBuilder from '../tests/TestBuilder';
-
+// a
 class SnapPage extends Component {
 
     state ={
@@ -21,7 +20,7 @@ class SnapPage extends Component {
     render() {
         return (
             <div>
-                <TestBuilder tests={this.state.tests}/>
+                {/* <TestBuilder tests={this.state.tests}/> */}
             </div>
         );
     }

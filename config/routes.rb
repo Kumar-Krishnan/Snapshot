@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
 
     resources :snaps do
-      resources :test_scores
+      resources :test_scoreste
     end
 
     resources :moods

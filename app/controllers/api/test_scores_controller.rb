@@ -22,6 +22,15 @@ class Api::TestScoresController < ApplicationController
         @snap = Snap.find(params[:snap_id])
         @mood = Mood.find(params[:mood_id])
         @test_score = @snap.test_scores.where(mood_id: @mood.id)
-        render json: @test_score
+        @fail = {
+            name: "fail"
+        }
+        if @test_score != []
+            render json: @test_score
+        else
+            render json: @fail
+        end
+
+        
     end
 end

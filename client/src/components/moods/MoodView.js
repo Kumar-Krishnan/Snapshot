@@ -7,7 +7,8 @@ class MoodView extends Component {
     state = {
         moodScore: {
         },
-        scoreExists: false
+        scoreExists: false,
+        oogaBooga: "OogaBooga"
     }
 
     componentDidMount = () =>{
@@ -36,10 +37,21 @@ class MoodView extends Component {
         }
 
         return (
+
+
             <div>
                 <h1>{this.props.mood.name}</h1>
-                {moodScoreShowOrInputScore}
-                <h5>{this.state.moodScore.score}</h5>
+                {
+                    this.state.scoreExists ?
+                    <h5>{this.state.moodScore.score}</h5>
+                    : null
+                }
+                {
+                    !this.state.scoreExists ?
+                    <h5>{this.state.oogaBooga}</h5>
+                    : null
+                }
+                
                 
             </div>
         );

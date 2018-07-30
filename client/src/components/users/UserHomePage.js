@@ -14,9 +14,9 @@ class UserHomePage extends Component {
     }
 
     fetchUserSnapsAndTests = async() =>{
-        let snaps = await axios.get(`/api/users/${this.props.match.params.id}/snaps/all`)
-        this.setState({snaps : snaps.data.snaps})
-        console.log(snaps.data.snaps)
+        let snaps = await axios.get(`/api/users/${this.props.match.params.id}/snaps/`)
+        this.setState({snaps : snaps.data})
+        console.log(snaps.data)
     }
     render() {
         return (

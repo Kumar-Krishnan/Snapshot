@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get '/users/:user_id/snaps/:snap_id/tests/all', to:'tests#get_whole_tests', defaults: {format: :json}
     get '/users/:user_id/snaps/all', to: 'snaps#get_snaps_and_tests', defaults: {format: :json}
     get '/snaps/:snap_id/test_scores/all', to: 'test_scores#get_all_test_scores_for_snap'
+    get '/snaps/:snap_id/moods/:mood_id/test_scores', to: 'test_scores#get_by_snap_and_mood'
     resources :users do
       resources :snaps
       resources :test_scores

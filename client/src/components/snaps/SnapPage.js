@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import MoodBuilder from '../moods/MoodBuilder';
 // a
 class SnapPage extends Component {
 
     state ={
-        tests: []
+        moods: []
     }
 
     componentDidMount = () =>{
-        this.fetchAllTests()
+        this.fetchAllMoods()
     }
 
-    fetchAllTests = async() =>{
-        let response = await axios.get(`/api/users/${this.props.match.params.userId}/snaps/${this.props.match.params.id}/tests/all`)
-        console.log(response.data.tests)
-        this.setState({tests: response.data.tests})
-        console.log(this.state.tests)
+    fetchAllMoods = async() =>{
+        let response = await axios.get(`/api/moods`)
+        console.log(response.data)
+        this.setState({moods: response.data})
+        console.log(this.state.moods)
     }
     render() {
         return (
             <div>
-                {/* <TestBuilder tests={this.state.tests}/> */}
+                <MoodBuilder moods={this.state.moods} snapId={this.props.match.params.id}/>
             </div>
         );
     }

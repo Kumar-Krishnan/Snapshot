@@ -16,6 +16,12 @@ class Api::TestScoresController < ApplicationController
         @scores = @snap.test_scores
         @dep_score = @scores.where(mood_id: @depression.id)
         @anx_score = @scores.where(mood_id: @anxiety.id)
+    end
 
+    def get_by_snap_and_mood
+        @snap = Snap.find(params[:snap_id])
+        @mood = Mood.find(params[:mood_id])
+        @test_score = @snap.test_scores.where(mood_id: @mood.id)
+        render json: @test_score
     end
 end

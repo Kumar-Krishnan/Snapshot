@@ -15,8 +15,8 @@ class MoodView extends Component {
     state = {
         moodScore: {
         },
-        scoreExists: false,
-        oogaBooga: "OogaBooga"
+        scoreExists: true,
+        scoreToBeSubmitted: 0
     }
 
     handleChange = (e, { value }) => this.setState({ value })
@@ -38,10 +38,26 @@ class MoodView extends Component {
             let noScore = {...this.state.moodScore}
             noScore.score = "no score"
             this.setState({moodScore: noScore})
+            this.setState({scoreExists: false})
         }
         console.log(this.state.moodScore)
     }
 
+    setScoreToBeSubmitted= (event) =>{
+        event.preventDefault()
+        let newScore = event.target.value
+        this.setState({scoreToBeSubmitted: newScore})
+        console.log(this.state.scoreToBeSubmitted)
+    }
+
+    setScoreAsFinal = async (event) =>{
+        event.preventDefault()
+        let moodId = this.props.mood.id
+        let snapId = this.props.snapId
+        let moodScore = this.state.scoreToBeSubmitted
+        let waiter = await axios.post(`/api/snaps/${snapId}/moods/${moodId}/${moodScore}`)
+        this.fetchSnapMoodScore()
+    }
 
     render() {
         const moodScoreShowOrInputScore = () =>{
@@ -60,16 +76,17 @@ class MoodView extends Component {
                 {
                     !this.state.scoreExists ?
                     <SubmitBox>
-                        <Button className="button1">1</Button>
-                        <Button>2</Button>
-                        <Button>3</Button>
-                        <Button>4</Button>
-                        <Button>5</Button>
-                        <Button>6</Button>
-                        <Button>7</Button>
-                        <Button>8</Button>
-                        <Button>9</Button>
-                        <Button>10</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={1} className="button1">1</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={2}>2</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={3}>3</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={4}>4</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={5}>5</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={6}>6</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={7}>7</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={8}>8</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={9}>9</Button>
+                        <Button onClick={this.setScoreToBeSubmitted} value={10}>10</Button>
+                        <Button onClick={this.setScoreAsFinal}>Submit Score</Button>
                     </SubmitBox>
                     : null
                 }

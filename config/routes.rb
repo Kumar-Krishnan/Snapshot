@@ -8,13 +8,14 @@ Rails.application.routes.draw do
     get '/users/:user_id/snaps/all', to: 'snaps#get_snaps_and_tests', defaults: {format: :json}
     get '/snaps/:snap_id/test_scores/all', to: 'test_scores#get_all_test_scores_for_snap'
     get '/snaps/:snap_id/moods/:mood_id/test_scores', to: 'test_scores#get_by_snap_and_mood'
+    post '/snaps/:snap_id/moods/:mood_id/:test_score', to: 'test_scores#save_user_submitted_score'
     resources :users do
       resources :snaps
       resources :test_scores
     end
 
     resources :snaps do
-      resources :test_scoreste
+      resources :test_scores
     end
 
     resources :moods

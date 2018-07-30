@@ -31,6 +31,22 @@ class Api::TestScoresController < ApplicationController
             render json: @fail
         end
 
+    def save_user_submitted_score
+        @snap = Snap.find(params[:snap_id])
+        @mood = Mood.find(params[:mood_id])
+        @userScore = params[:test_score]
+        @new_test_score = TestScore.new
+        @new_test_score.score = @userScore
+        @new_test_score.snap_id = @snap.id
+        @new_test_score.mood_id = @mood.id
+        @new_test_score.user_id = @snap.user_id
+        @new_test_score.save
+
+        @response = {
+            message: "All Systems Go"
+        }
+        render json: @response
+    end
         
     end
 end

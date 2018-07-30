@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Button } from 'semantic-ui-react'
+import styled from 'styled-components'
+
+const SubmitBox = styled.div`
+    .button{
+        background-color: red;
+    }
+`
 
 
 class MoodView extends Component {
@@ -10,6 +18,9 @@ class MoodView extends Component {
         scoreExists: false,
         oogaBooga: "OogaBooga"
     }
+
+    handleChange = (e, { value }) => this.setState({ value })
+
 
     componentDidMount = () =>{
         this.fetchSnapMoodScore()
@@ -48,7 +59,18 @@ class MoodView extends Component {
                 }
                 {
                     !this.state.scoreExists ?
-                    <h5>{this.state.oogaBooga}</h5>
+                    <SubmitBox>
+                        <Button className="button1">1</Button>
+                        <Button>2</Button>
+                        <Button>3</Button>
+                        <Button>4</Button>
+                        <Button>5</Button>
+                        <Button>6</Button>
+                        <Button>7</Button>
+                        <Button>8</Button>
+                        <Button>9</Button>
+                        <Button>10</Button>
+                    </SubmitBox>
                     : null
                 }
                 

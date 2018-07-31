@@ -22,9 +22,9 @@ class App extends Component {
       <SnapPage {...props}/>
     )
 
-    const moodGrapher = (props) =>{
+    const moodGrapher = (props) =>(
       <MoodGraph {...props}/>
-    }
+    )
     return (
       <div className="App">
 
@@ -33,8 +33,7 @@ class App extends Component {
               <Route exact path="/" render={WelcomePageWrapper}/>
               <Route exact path="/users/:id" render={UserHomePageWrapper}/>
               <Route exact path="/users/:userId/snaps/:id" render={SnapPageWrapper}/>
-              <Route exact path="/example" component={Example}/>
-              <Route exact path="/users/:userId/moods/:moodId" render={moodGrapher}/>
+              <Route exact path="/users/:userId/moods/:moodId" component={moodGrapher}/>
           </Switch>
         </Router>            
       </div>

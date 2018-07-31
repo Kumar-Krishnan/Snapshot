@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/snaps/:snap_id/test_scores/all', to: 'test_scores#get_all_test_scores_for_snap'
     get '/snaps/:snap_id/moods/:mood_id/test_scores', to: 'test_scores#get_by_snap_and_mood'
     post '/snaps/:snap_id/moods/:mood_id/:test_score', to: 'test_scores#save_user_submitted_score'
+    get '/users/:user_id/moods/:mood_id/test_scores', to: 'test_scores#get_all_test_scores_for_user' 
     resources :users do
       resources :snaps
       resources :test_scores

@@ -30,6 +30,7 @@ class Api::TestScoresController < ApplicationController
         else
             render json: @fail
         end
+    end
 
     def save_user_submitted_score
         @snap = Snap.find(params[:snap_id])
@@ -47,6 +48,12 @@ class Api::TestScoresController < ApplicationController
         }
         render json: @response
     end
-        
+
+    def get_all_test_scores_for_user
+        @user = User.find(params[:user_id])
+        @mood = Mood.find(params[:mood_id])
+        @requested_scores = @user.test_scores.where(mood_id: @mood.id)
+        render json: @requested_scores
     end
+    
 end

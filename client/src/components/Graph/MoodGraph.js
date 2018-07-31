@@ -6,11 +6,19 @@ class MoodGraph extends Component {
 
     state = {
         x: [],
-        y: []
+        y: [],
+        mood: {}
     }
 
     componentDidMount = () =>{
         this.fetchMoodAnswers()
+        this.fetchMood()
+    }
+
+    fetchMood = async() =>{
+        let response = await axios.get(`/api/moods/${this.props.match.params.moodId}`)
+        console.log(response.data)
+        this.setState({mood: response.data})
     }
 
     fetchMoodAnswers = async () =>{
@@ -37,7 +45,7 @@ class MoodGraph extends Component {
     render() {
         return (
             <div>
-                <MoodGraphDisplay x={this.state.x} y={this.state.y}/>
+                <MoodGraphDisplay x={this.state.x} mood={this.state.mood} y={this.state.y}/>
             </div>
         );
     }

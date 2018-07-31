@@ -11,8 +11,17 @@ class MoodGraphDisplay extends Component {
                 data={[
                 {type: 'bar', x: this.props.x, y: this.props.y},
                 ]}
-                layout={ {width: 700, height: 240, title: 'A Fancy Plot'} }
-            />
+                layout={ {
+                    width: 700,
+                    height: 500,
+                    xaxis: {
+                        title: 'Hours'
+                    },
+                    yaxis: {
+                        title: 'Mood score'
+                    },
+                    title: `${this.props.mood.name} scores over time`} }
+                />
             </div>
         );
     }

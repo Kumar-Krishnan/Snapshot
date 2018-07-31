@@ -38,15 +38,13 @@ The main technologies I was focused on familiarizing myself with were SQL, being
 * Integrate an authentication method to utilize passwords.
 
 * Utilize redux to manage state
-## WireFrames Used
+## WireFrames Used:
 
 ![](https://i.imgur.com/w4du59pl.png)
 ![](https://i.imgur.com/Fks2PH4l.png)
 ![](https://i.imgur.com/82IFoJRl.png)
 
-
-#ERD:
-
+# ERD:
 ![](https://i.imgur.com/qVeMdbUl.png)
 
 

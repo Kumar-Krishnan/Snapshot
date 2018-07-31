@@ -8,13 +8,13 @@
 
 ## Technologies Used: 
 
-###Front-end
+### Front-end
 * React.js
 * Styled Components
 * Semantic-ui
 * Plot.ly
 
-###BackEnd
+### BackEnd
 * Ruby
 * Rails
 * Active Record
@@ -43,6 +43,8 @@ The main technologies I was focused on familiarizing myself with were SQL, being
 ![](https://i.imgur.com/w4du59pl.png)
 ![](https://i.imgur.com/Fks2PH4l.png)
 ![](https://i.imgur.com/82IFoJRl.png)
+
+
 #ERD:
 
 ![](https://i.imgur.com/qVeMdbUl.png)
